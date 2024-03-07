@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Timers;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 using NAudio.CoreAudioApi;
 
 namespace VolumeTimer
@@ -17,22 +20,29 @@ namespace VolumeTimer
             MMDeviceEnumerator devEnum = new MMDeviceEnumerator();
             defaultDevice = devEnum.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
         }
+        
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+        
+        private void VolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            int volume = (int)Math.Round(e.NewValue);
+            VolumeLabel.Content = $"{volume}%";
+        }
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             int minutes;
-            if (!int.TryParse(TimerInput.Text, out minutes))
+            if (!int.TryParse(Timer_HourInput.Text, out minutes))
             {
                 MessageBox.Show("Invalid input for minutes.");
                 return;
             }
 
-            int volume;
-            if (!int.TryParse(VolumeInput.Text, out volume))
-            {
-                MessageBox.Show("Invalid input for volume.");
-                return;
-            }
+            int volume = (int)VolumeSlider.Value;
 
             timer = new Timer(1000 * 60 * minutes);
             timer.Elapsed += (s, args) => {
