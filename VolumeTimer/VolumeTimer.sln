@@ -1,6 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolumeTimer", "VolumeTimer\VolumeTimer.csproj", "{4A8C08D3-E591-48C0-A59C-22BF16FBF6F8}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolumeTimer", "VolumeTimer.csproj", "{E9E0ED69-D942-4542-9776-B70863DEA39F}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "..\Setup\Setup.vdproj", "{7C41CE3B-748D-4396-A20A-D2DF18006645}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +13,17 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4A8C08D3-E591-48C0-A59C-22BF16FBF6F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A8C08D3-E591-48C0-A59C-22BF16FBF6F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A8C08D3-E591-48C0-A59C-22BF16FBF6F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A8C08D3-E591-48C0-A59C-22BF16FBF6F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9E0ED69-D942-4542-9776-B70863DEA39F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9E0ED69-D942-4542-9776-B70863DEA39F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9E0ED69-D942-4542-9776-B70863DEA39F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9E0ED69-D942-4542-9776-B70863DEA39F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C41CE3B-748D-4396-A20A-D2DF18006645}.Debug|Any CPU.ActiveCfg = Debug
+		{7C41CE3B-748D-4396-A20A-D2DF18006645}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00147E83-B7AF-41C9-8D1F-C2CD28E94D3A}
 	EndGlobalSection
 EndGlobal
